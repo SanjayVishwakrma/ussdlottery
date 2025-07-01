@@ -3,7 +3,11 @@ const sessions = {};
 function processUSSDRequest(sessionId, phoneNumber, text) {
   let response = '';
   const input = text.trim() === '' ? [] : text.split('*');
+  console.log("input---------",input);
   const step = input.length;
+  console.log("step---------", step);
+
+  console.log("xxxxx", sessionId, phoneNumber, text);
 
   switch (step) {
     case 0:
