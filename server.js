@@ -7,7 +7,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/ussd', (req, res) => {
   const { sessionId, phoneNumber, text } = req.body;
+  
+  console.log('111111111111--------', req.body)
   const response = processUSSDRequest(sessionId, phoneNumber, text);
+  
+  console.log('222222222222--------', response)
   res.set('Content-Type', 'text/plain');
   res.send(response);
 });
